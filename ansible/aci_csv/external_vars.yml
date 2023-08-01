@@ -1,0 +1,7 @@
+---
+aci_username:  damcfarl
+aci_password:  cisco!123
+protocol: https
+validate_certs:  no
+
+# These are the Variables and values that are used by ansible_loop.yml

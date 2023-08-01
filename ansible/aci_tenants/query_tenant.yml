@@ -1,0 +1,23 @@
+---
+- name: Make Tenant dm-ansible1
+  hosts: apics
+  connection: local
+  gather_facts: false
+  
+  vars:
+    status: query
+
+  vars_files:
+    - external_vars.yml
+
+  tasks:
+    - name:  Query Tenant
+      cisco.aci.aci_tenant:
+        tenant:           "{{ tenant_name }}"
+        host:             "{{ remote_device }}"
+        username:         "{{ aci_username }}"
+        password:         "{{ aci_password }}"
+        validate_certs:   "{{ validate_certs }}"
+        state:            "{{ status }}"
+      delegate_to:            localhost
+      register:               query_result

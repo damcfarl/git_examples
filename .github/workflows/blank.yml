@@ -1,4 +1,6 @@
-- name: Run playbook
+name: Run playbook
+on: [push, workflow_dispatch]
+
   uses: dawidd6/action-ansible-playbook@v2
   with:
     playbook: create_tenant.yml

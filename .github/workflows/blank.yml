@@ -1,11 +1,12 @@
 name: Run playbook
-on: [push, workflow_dispatch]
+on: [push]
 jobs:
-    deploy:
-         uses: dawidd6/action-ansible-playbook@v2
-         with:
-            playbook: create_tenant.yml
-            directory: git_examples/ansible/aci_tenants
-            options: |
-              --inventory hosts
-              --verbose
+  deploy:
+    steps:
+      - uses: dawidd6/action-ansible-playbook@v2
+        with:
+          playbook: create_tenant.yml
+          directory: git_examples/ansible/aci_tenants
+          options: |
+            --inventory hosts
+            --verbose

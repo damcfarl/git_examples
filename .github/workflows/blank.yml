@@ -1,7 +1,6 @@
 name: Run playbook
 on: [push, workflow_dispatch]
 jobs:
-    deploy:
       uses: dawidd6/action-ansible-playbook@v2
       with:
       playbook: create_tenant.yml

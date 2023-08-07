@@ -1,11 +1,12 @@
 name: Run playbook
 on: [push, workflow_dispatch]
-
-  uses: dawidd6/action-ansible-playbook@v2
-  with:
-    playbook: create_tenant.yml
+jobs:
+    deploy:
+      uses: dawidd6/action-ansible-playbook@v2
+      with:
+      playbook: create_tenant.yml
     # Optional, directory where playbooks live
-    directory: git_examples/ansible/aci_tenants
+      directory: git_examples/ansible/aci_tenants
     # Optional, SSH private key
     ##key: ${{secrets.SSH_PRIVATE_KEY}}
     # Optional, literal inventory file contents
@@ -23,8 +24,8 @@ on: [push, workflow_dispatch]
     # Optional, galaxy requirements filepath
     ##requirements: galaxy-requirements.yml
     # Optional, additional flags to pass to ansible-playbook
-    options: |
-      --inventory hosts
+       options: |
+         --inventory hosts
   ##    --limit group1
   ##    --extra-vars hello=there
-      --verbose
+         --verbose

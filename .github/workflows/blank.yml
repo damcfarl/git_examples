@@ -11,3 +11,4 @@ jobs:
           options: |
             --inventory hosts
             --verbose
+      - run: npm install -g bats

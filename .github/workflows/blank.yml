@@ -1,7 +1,6 @@
 - name: Run playbook
   uses: dawidd6/action-ansible-playbook@v2
   with:
-    # Required, playbook filepath
     playbook: create_tenant.yml
     # Optional, directory where playbooks live
     directory: git_examples/ansible/aci_tenants

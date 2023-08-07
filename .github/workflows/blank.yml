@@ -2,7 +2,7 @@
   uses: dawidd6/action-ansible-playbook@v2
   with:
     # Required, playbook filepath
-    playbook: create_tenant.yml
+    playbook: ../../create_tenant.yml
     # Optional, directory where playbooks live
     directory: ../../
     # Optional, SSH private key

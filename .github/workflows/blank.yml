@@ -13,6 +13,5 @@ jobs:
           playbook: delete_tenant.yml
           directory: ansible/aci_tenants
           options: |
-            --inventory hosts
-            --verbose
+            --inventory hosts --verbose
       - run: npm install -g bats

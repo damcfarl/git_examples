@@ -1,18 +1,22 @@
-name: Run playbook
-on: [push]
+name: CI
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the "master" branch
+  push:
+    branches: [ "master" ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+  
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  deploy:
+  run-playbooks:
     runs-on: ubuntu-latest
-    steps:
+    steps: 
       - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: '14'
-      - run: npm install -g bats
-      - uses: dawidd6/action-ansible-playbook@v2
-        with:
-          playbook: delete_tenant.yml
-          directory: ansible/aci_tenants
-          options: |
-            --inventory hosts --verbose
+        run: |
+          mkdir -p /home/runner/.ssh/
+          cd git_examples/ansible/aci_examples         
+          ansible-playbook -i hosts delete_tenant.yml
       

@@ -8,10 +8,11 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: '14'
+      - run: npm install -g bats
       - uses: dawidd6/action-ansible-playbook@v2
         with:
           playbook: delete_tenant.yml
           directory: ansible/aci_tenants
           options: |
             --inventory hosts --verbose
-      - run: npm install -g bats
+      

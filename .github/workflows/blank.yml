@@ -16,4 +16,4 @@ jobs:
       - run: |
           ping -c 5 10.88.36.23 
           cd ansible/aci_tenants
-          ansible-playbook -i hosts delete_tenant.yml
+          ansible-playbook -i hosts create_tenant.yml

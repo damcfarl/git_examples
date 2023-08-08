@@ -10,7 +10,7 @@ jobs:
           node-version: '14'
       - uses: dawidd6/action-ansible-playbook@v2
         with:
-          playbook: create_tenant.yml
+          playbook: delete_tenant.yml
           directory: ansible/aci_tenants
           options: |
             --inventory hosts

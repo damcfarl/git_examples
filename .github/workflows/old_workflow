@@ -1,0 +1,17 @@
+name: Run playbook
+on: [push]
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '14'
+      - uses: dawidd6/action-ansible-playbook@v2
+        with:
+          playbook: delete_tenant.yml
+          directory: ansible/aci_tenants
+          options: |
+            --inventory hosts --verbose
+      - run: npm install -g bats

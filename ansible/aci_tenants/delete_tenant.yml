@@ -22,5 +22,5 @@
         validate_certs:   "{{ validate_certs }}"
 #       state:            absent
         state:            "{{ status }}"
-      delegate_to:            localhost
+      delegate_to:        "{{ remote_device }}"
 

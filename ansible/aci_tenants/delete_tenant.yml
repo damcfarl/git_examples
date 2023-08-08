@@ -6,9 +6,7 @@
   
   vars:
     status: "absent"
-    use_proxy: yes
-    http_proxy: "http://proxy-esl.cisco.com:80"
-    https_proxy: "http://proxy-esl.cisco.com:80"
+    use_ssl: no
 
   vars_files:
     - external_vars.yml

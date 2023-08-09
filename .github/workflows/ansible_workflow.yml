@@ -4,7 +4,7 @@ env:
   PY_COLORS: '1'
   ANSIBLE_FORCE_COLOR: '1'
 
-# Controls when the workflow will run
+# Controls when the workflow will run next
 on: [push]
   # Triggers the workflow on push or pull request events but only for the "master" branch
   ##push:

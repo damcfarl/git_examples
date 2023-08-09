@@ -18,6 +18,6 @@ jobs:
     steps: 
       - uses: actions/checkout@v3
       - run: |
-          ping -c 5 10.88.36.23 
+          ping -c 2 10.88.36.23 
           cd ansible/aci_tenants
-          ansible-playbook -i hosts create_tenant.yml -vvv
+          ansible-playbook -i hosts delete_tenant.yml -vvv

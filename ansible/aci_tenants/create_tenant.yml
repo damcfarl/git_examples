@@ -6,6 +6,7 @@
   
   vars:
     status: present
+    ANSIBLE_FORCE_COLOR=true
 
   vars_files:
     - external_vars.yml
